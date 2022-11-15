@@ -40,5 +40,7 @@
   },
   "author": "Victoria Ivanyutenko",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "uuidv4": "^6.2.13"
+  }
 }

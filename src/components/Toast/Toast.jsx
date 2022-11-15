@@ -2,14 +2,14 @@ import React from 'react';
 
 //Отступы??
 const Toast = ({
-  variant,
+  variant, //default = success
   title,
   text,
-  position,
+  position, //default = rightBottom
   timer,
-  color,
+  color, //default = green
   padding,
-  animation,
+  animation, //default ..
 }) => {
   return <div>Toast</div>;
 };
