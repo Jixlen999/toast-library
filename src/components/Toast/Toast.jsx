@@ -1,6 +1,16 @@
 import React from 'react';
 
-const Toast = () => {
+//Отступы??
+const Toast = ({
+  variant,
+  title,
+  text,
+  position,
+  timer,
+  color,
+  padding,
+  animation,
+}) => {
   return <div>Toast</div>;
 };
 
