@@ -9,10 +9,15 @@ class ToastService {
   }
 
   getToasts() {
-    console.log(this.toasts);
+    return this.toasts;
   }
+
   setNewToast(toast) {
-    this.toasts.push(toast);
+    if (this.toasts.length < 3) {
+      this.toasts = [...this.toasts, { id: this.toasts.length, toast }];
+      return { id: this.toasts.length, toast };
+    }
+    return null;
   }
 }
 
