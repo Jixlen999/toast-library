@@ -1,9 +1,10 @@
 import React from 'react';
+import { ToastWrapper } from './style';
 
 //Отступы??
 const ToastItem = ({
   text,
-  // variant, //default = success
+  variant, //default = success
   // title,
   // text,
   // position, //default = rightBottom
@@ -12,7 +13,12 @@ const ToastItem = ({
   // padding,
   // animation, //default ..
 }) => {
-  return <>{text}</>;
+  return (
+    <ToastWrapper>
+      <h1>{variant}</h1>
+      <p>{text}</p>
+    </ToastWrapper>
+  );
 };
 
 export default ToastItem;
