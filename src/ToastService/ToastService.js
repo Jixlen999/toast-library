@@ -12,10 +12,10 @@ class ToastService {
     return this.toasts;
   }
 
-  setNewToast(toast) {
+  createToast(toast) {
     if (this.toasts.length < 3) {
-      this.toasts = [...this.toasts, { id: this.toasts.length, toast }];
-      return { id: this.toasts.length, toast };
+      this.toasts = [...this.toasts, { id: this.toasts.length, ...toast }];
+      return { id: this.toasts.length, ...toast };
     }
     return null;
   }
