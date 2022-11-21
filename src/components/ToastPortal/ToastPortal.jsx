@@ -1,14 +1,23 @@
-import { createPortal } from 'react-dom';
+import { createPortal } from "react-dom";
+import changePosition from "../../utils/changePosition";
 
-const ToastPortal = ({ children }) => {
-  let portal = document.getElementById('toastPortal');
-  if (!portal) {
-    portal = document.createElement('div');
-    portal.id = 'toastPortal';
-    document.body.prepend(portal);
-  }
+const ToastPortal = ({ children, position }) => {
+	let portal = document.getElementById(`toastPortal-${position}`);
 
-  return createPortal(children, portal);
+	if (!portal) {
+		portal = document.createElement("div");
+		portal.id = `toastPortal-${position}`;
+		position = changePosition(position);
+		portal.style.width = "auto";
+		portal.style.height = "auto";
+		document.body.prepend(portal);
+		portal.style.position = "fixed";
+		portal.style.right = position.right ? position.right : null;
+		portal.style.left = position.left ? position.left : null;
+		portal.style.bottom = position.bottom ? position.bottom : null;
+		portal.style.top = position.top ? position.top : null;
+	}
+	return createPortal(children, portal);
 };
 
 export default ToastPortal;

@@ -4,6 +4,7 @@ class ToastService {
       return ToastService.toastService;
     }
     this.toasts = [];
+    this.lastId = 0;
     ToastService.toastService = this;
     return this;
   }
@@ -11,11 +12,16 @@ class ToastService {
   getToasts() {
     return this.toasts;
   }
+  deleteToastById(id) {
+    this.toasts = this.toasts.filter((el) => el.id !== id);
+    return this.toasts;
+  }
 
   createToast(toast) {
     if (this.toasts.length < 3) {
-      this.toasts = [...this.toasts, { id: this.toasts.length, ...toast }];
-      return { id: this.toasts.length, ...toast };
+      this.toasts = [...this.toasts, { id: this.lastId, ...toast }];
+      this.lastId++;
+      return { ...this.toasts[this.toasts.length - 1] };
     }
     return null;
   }
