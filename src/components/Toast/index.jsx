@@ -38,7 +38,7 @@ const Toast = ({
       const timeout = setTimeout(() => deleteToastById(id), timer * 1000);
       return () => clearTimeout(timeout);
     }
-  }, [timer, deleteToastById, id]);
+  }, []);
 
   return (
     <ToastPortal position={position}>
