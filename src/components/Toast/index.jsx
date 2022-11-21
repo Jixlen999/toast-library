@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import chooseIcon from '../../utils/chooseIcon';
+import { CgClose } from 'react-icons/cg';
+import chooseIcon from '@utils/chooseIcon';
+import chooseTitle from '@utils/chooseTitle';
+import ToastPortal from '@components/ToastPortal';
 import {
   ToastWrapper,
   Text,
@@ -9,8 +12,6 @@ import {
   TextContainer,
   CloseButton,
 } from './style';
-import { CgClose } from 'react-icons/cg';
-import ToastPortal from '../ToastPortal';
 
 const Toast = ({
   id,
@@ -26,21 +27,7 @@ const Toast = ({
   timer,
 }) => {
   if (text === null && title === null) {
-    switch (variant) {
-      case 'warning':
-        title = 'Warning';
-        break;
-      case 'danger':
-        title = 'Danger';
-        break;
-      case 'info':
-        title = 'Info';
-        break;
-      case 'success':
-      default:
-        title = 'Success';
-        break;
-    }
+    title = chooseTitle(variant);
   }
   const deleteToast = () => {
     deleteToastById(id);

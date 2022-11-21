@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import changePosition from '../../utils/changePosition';
+import changePosition from '@utils/changePosition';
 
 const ToastPortal = ({ children, position }) => {
   let portal = document.getElementById(`toastPortal-${position}`);

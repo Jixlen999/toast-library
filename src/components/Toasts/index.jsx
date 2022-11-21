@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import toastService from '../../ToastService';
-import ErrorBoundary from '../ErrorBoundary';
-import Toast from '../Toast';
+import toastService from '@src/ToastService';
+import ErrorBoundary from '@components/ErrorBoundary';
+import Toast from '@components/Toast';
 import { ToastsWrapper } from './style';
 
 const Toasts = ({ toasts }) => {
