@@ -5,6 +5,12 @@ export default {
   title: 'Toast',
   component: Toast,
   argTypes: {
+    text: {
+      control: 'text',
+    },
+    title: {
+      control: 'text',
+    },
     variant: {
       options: ['success', 'info', 'warning', 'danger'],
       control: { type: 'radio' },
@@ -23,6 +29,15 @@ export default {
         'bottom-center',
       ],
       control: { type: 'radio' },
+    },
+    bgColor: {
+      control: 'color',
+    },
+    iconAndTextColor: {
+      control: 'color',
+    },
+    spacing: {
+      control: 'number',
     },
   },
 };

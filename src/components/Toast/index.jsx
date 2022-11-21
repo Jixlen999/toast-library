@@ -18,7 +18,7 @@ const Toast = ({
   text,
   variant,
   title,
-  color,
+  bgColor,
   iconAndTextColor,
   spacing,
   animation,
@@ -45,7 +45,7 @@ const Toast = ({
       <ToastWrapper
         iconAndTextColor={iconAndTextColor}
         variant={variant}
-        color={color}
+        bgColor={bgColor}
         spacing={spacing}
         animation={animation}
       >
