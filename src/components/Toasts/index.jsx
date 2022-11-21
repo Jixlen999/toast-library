@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import toastService from '../../ToastService/ToastService';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import PropTypes from 'prop-types';
+import toastService from '../../ToastService';
+import ErrorBoundary from '../ErrorBoundary';
 import Toast from '../Toast';
 import { ToastsWrapper } from './style';
 
@@ -28,6 +29,10 @@ const Toasts = ({ toasts }) => {
       <ErrorBoundary>{toastsArray}</ErrorBoundary>
     </ToastsWrapper>
   );
+};
+
+Toasts.propTypes = {
+  toasts: PropTypes.array,
 };
 
 Toasts.defaultProps = {
