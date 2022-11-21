@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import toastService from '@src/ToastService';
 import ErrorBoundary from '@components/ErrorBoundary';
 import Toast from '@components/Toast';
-import { ToastsWrapper } from './style';
 
 const Toasts = ({ toasts }) => {
   const [toastsArr, setToastsArr] = useState([]);
@@ -18,16 +17,17 @@ const Toasts = ({ toasts }) => {
 
   const toastsArray = useMemo(
     () =>
-      toastsArr.map((t) => (
-        <Toast key={t.id} {...t} deleteToastById={deleteToastById} />
-      )),
+      toastsArr.map((t) => {
+        const { id } = t;
+        return <Toast key={id} {...t} deleteToastById={deleteToastById} />;
+      }),
     [toastsArr],
   );
 
   return (
-    <ToastsWrapper>
+    <div>
       <ErrorBoundary>{toastsArray}</ErrorBoundary>
-    </ToastsWrapper>
+    </div>
   );
 };
 
