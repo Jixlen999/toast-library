@@ -18,6 +18,8 @@ export default [
         exports: 'named',
       },
     ],
+    external: ['styled-components'],
+    globals: { 'styled-components': 'styled' },
     plugins: [
       alias({
         resolve: ['.js', '.ts', '.tsx', '.jsx'],
@@ -36,6 +38,7 @@ export default [
           },
         ],
       }),
+
       resolve({ extensions: ['.js', '.jsx'], browser: true }),
       babel({
         exclude: 'node_modules/**',
