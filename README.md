@@ -3,10 +3,10 @@
 ## How to use
 
 1. ```import {Toasts, toastService} from 'jix-toast-library'```
-2. Create state for keeping future toasts:
+2. Create state for keeping future toasts:  
    ```const [toasts, setToasts] = useState([]);```
-3. Create a toast or some toasts using the next syntax:
-   ```toastService.createToast()```
+3. Create a toast or some toasts using the next syntax:  
+   ```toastService.createToast()```  
    You also can manually setup your toasts:
    ```
    toastService.createToast({
@@ -21,7 +21,7 @@
    		timer: someValue, //seconds
    	})
    ```
-4. Use your state created on step 2 to save created toasts: 
+4. Use your state created on step 2 to save created toasts:  
 	``` setToasts(toastService.getToasts()); ```
-5. Use Toasts component to display your toasts (pass in your state from step 2 to the "toasts" prop):
+5. Use Toasts component to display your toasts (pass in your state from step 2 to the "toasts" prop):  
 	```<Toasts toasts={toasts} />```
