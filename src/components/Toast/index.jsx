@@ -72,7 +72,7 @@ Toast.propTypes = {
   text: PropTypes.string,
   variant: PropTypes.string,
   title: PropTypes.string,
-  color: PropTypes.string,
+  bgColor: PropTypes.string,
   iconAndTextColor: PropTypes.string,
   spacing: PropTypes.string,
   animation: PropTypes.string,
@@ -85,12 +85,12 @@ Toast.defaultProps = {
   text: null,
   variant: 'success',
   title: null,
-  color: null,
+  bgColor: null,
   iconAndTextColor: null,
   spacing: '10',
   animation: 'slideRight',
   position: 'bottom-right',
-  timer: null,
+  timer: 3,
 };
 
 export default React.memo(Toast);

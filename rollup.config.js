@@ -1,8 +1,9 @@
 import { babel } from '@rollup/plugin-babel';
-import external from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import alias from '@rollup/plugin-alias';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default [
   {
@@ -18,8 +19,6 @@ export default [
         exports: 'named',
       },
     ],
-    external: ['styled-components'],
-    globals: { 'styled-components': 'styled' },
     plugins: [
       alias({
         resolve: ['.js', '.ts', '.tsx', '.jsx'],
@@ -39,12 +38,16 @@ export default [
         ],
       }),
 
-      resolve({ extensions: ['.js', '.jsx'], browser: true }),
+      resolve({
+        extensions: ['.js', '.jsx'],
+        browser: true,
+      }),
       babel({
         exclude: 'node_modules/**',
         presets: ['@babel/preset-react'],
       }),
-      external(),
+      commonjs(),
+      peerDepsExternal(),
       resolve(),
       terser(),
     ],

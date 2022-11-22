@@ -1,9 +1,8 @@
-import React from 'react';
-import Toast from '@components/Toast';
+import Main from '@components/Main';
 
 export default {
-  title: 'Toast',
-  component: Toast,
+  title: 'Toasts',
+  component: Main,
   argTypes: {
     text: {
       control: 'text',
@@ -39,9 +38,11 @@ export default {
     spacing: {
       control: 'number',
     },
+    id: {
+      control: true,
+    },
   },
 };
 
-const Template = (args) => <Toast {...args} />;
-
-export const Default = Template.bind({});
+const Template = (args) => <Main {...args} />;
+export const Toasts = Template.bind({});

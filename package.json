@@ -1,11 +1,12 @@
 {
   "name": "jix-toast-library",
-  "version": "1.0.0",
+  "version": "1.0.16",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-babel": "^6.0.2",
@@ -32,6 +33,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
     "rollup": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -55,8 +57,5 @@
     "build": "rollup -c --bundleConfigAsCjs"
   },
   "author": "Victoria",
-  "license": "ISC",
-  "dependencies": {
-    "react-icons": "^4.6.0"
-  }
+  "license": "ISC"
 }
