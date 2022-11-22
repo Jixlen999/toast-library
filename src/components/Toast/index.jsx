@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
 import { CgClose } from 'react-icons/cg';
 import chooseIcon from '@utils/chooseIcon';
 import chooseTitle from '@utils/chooseTitle';
 import ToastPortal from '@components/ToastPortal';
+import theme from '@src/theme';
 import {
   ToastWrapper,
   Text,
@@ -41,25 +43,27 @@ const Toast = ({
   }, []);
 
   return (
-    <ToastPortal position={position}>
-      <ToastWrapper
-        iconAndTextColor={iconAndTextColor}
-        variant={variant}
-        bgColor={bgColor}
-        spacing={spacing}
-        animation={animation}
-      >
-        <Icon>{chooseIcon(variant)}</Icon>
-        <TextContainer>
-          <Title>{title}</Title>
-          <Text>{text}</Text>
-        </TextContainer>
+    <ThemeProvider theme={theme}>
+      <ToastPortal position={position}>
+        <ToastWrapper
+          iconAndTextColor={iconAndTextColor}
+          variant={variant}
+          bgColor={bgColor}
+          spacing={spacing}
+          animation={animation}
+        >
+          <Icon>{chooseIcon(variant)}</Icon>
+          <TextContainer>
+            <Title>{title}</Title>
+            <Text>{text}</Text>
+          </TextContainer>
 
-        <CloseButton onClick={deleteToast}>
-          <CgClose />
-        </CloseButton>
-      </ToastWrapper>
-    </ToastPortal>
+          <CloseButton onClick={deleteToast}>
+            <CgClose />
+          </CloseButton>
+        </ToastWrapper>
+      </ToastPortal>
+    </ThemeProvider>
   );
 };
 
