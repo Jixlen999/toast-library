@@ -38,8 +38,18 @@ export default {
     spacing: {
       control: 'number',
     },
+    timer: {
+      control: 'number',
+    },
     id: {
-      control: true,
+      table: {
+        disable: true,
+      },
+    },
+    args: {
+      table: {
+        disable: true,
+      },
     },
   },
 };

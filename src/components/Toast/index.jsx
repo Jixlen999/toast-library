@@ -90,7 +90,7 @@ Toast.defaultProps = {
   spacing: '10',
   animation: 'slideRight',
   position: 'bottom-right',
-  timer: 3,
+  timer: 5,
 };
 
 export default React.memo(Toast);
