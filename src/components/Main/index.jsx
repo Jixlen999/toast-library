@@ -16,7 +16,9 @@ const Main = (args) => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Button onClick={clickHandler(args)}>Create Toast</Button>
+        <Button data-cy="btn" onClick={clickHandler(args)}>
+          Create Toast
+        </Button>
         <Toasts toasts={toasts} />
       </ThemeProvider>
     </div>

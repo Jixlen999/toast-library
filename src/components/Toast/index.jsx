@@ -44,8 +44,9 @@ const Toast = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <ToastPortal position={position}>
+      <ToastPortal position={position} data-cy="portal">
         <ToastWrapper
+          data-cy="toast"
           iconAndTextColor={iconAndTextColor}
           variant={variant}
           bgColor={bgColor}
@@ -58,7 +59,7 @@ const Toast = ({
             <Text>{text}</Text>
           </TextContainer>
 
-          <CloseButton onClick={deleteToast}>
+          <CloseButton onClick={deleteToast} data-cy="close-btn">
             <CgClose />
           </CloseButton>
         </ToastWrapper>
